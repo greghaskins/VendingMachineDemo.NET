@@ -13,11 +13,14 @@ namespace VendingTests
     class CoinValidatorTest
     {
         [Test]
-        public void ShouldAcceptADime()
+        [TestCase(Coin.Nickel)]
+        [TestCase(Coin.Dime)]
+        [TestCase(Coin.Quarter)]
+        public void ShouldAcceptA(Coin validCoin)
         {
             var validator = new CoinValidator();
 
-            var result = validator.Validate(Coin.Dime);
+            var result = validator.Validate(validCoin);
 
             Assert.AreEqual(true, result);
         }

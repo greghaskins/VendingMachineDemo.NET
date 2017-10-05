@@ -3,6 +3,8 @@ namespace Vending
     public enum Coin
     {
         Dime,
-        Penny
+        Penny,
+        Quarter,
+        Nickel
     }
 }
