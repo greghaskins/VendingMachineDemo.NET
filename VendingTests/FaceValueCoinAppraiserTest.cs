@@ -9,7 +9,7 @@ using Vending;
 namespace VendingTests
 {
     [TestFixture]
-    class UsMintCoinAppraiserTest
+    class FaceValueCoinAppraiserTest
     {
         [Test]
         [TestCase(Coin.Dime, ExpectedResult = 10)]
@@ -17,7 +17,7 @@ namespace VendingTests
         [TestCase(Coin.Quarter, ExpectedResult = 25)]
         public int CoinsHaveTheCorrectValue(Coin coin)
         {
-            return new UsMintCoinAppraiser().Appraise(coin);
+            return new FaceValueCoinAppraiser().Appraise(coin);
         }
 
     }
