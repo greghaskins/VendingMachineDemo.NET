@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coin.cs" />
-    <Compile Include="CoinAppraiser.cs" />
+    <Compile Include="UsMintCoinAppraiser.cs" />
     <Compile Include="CoinValidator.cs" />
+    <Compile Include="ICoinAppraiser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VendingMachine.cs" />

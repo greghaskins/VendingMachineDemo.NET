@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace Vending
+﻿namespace Vending
 {
     public class VendingMachine
     {
         private int _totalValueInserted = 0;
-        private readonly CoinAppraiser _coinAppraiser;
+        private readonly ICoinAppraiser _coinAppraiser;
 
-        public VendingMachine(CoinAppraiser coinAppraiser)
+        public VendingMachine(ICoinAppraiser coinAppraiser)
         {
             _coinAppraiser = coinAppraiser;
         }
