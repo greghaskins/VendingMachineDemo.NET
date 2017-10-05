@@ -7,8 +7,8 @@
     <ProjectGuid>{1F6F96F4-B5F2-487E-A1EB-174EFC6CB42E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VendingMachine</RootNamespace>
-    <AssemblyName>VendingMachine</AssemblyName>
+    <RootNamespace>Vending</RootNamespace>
+    <AssemblyName>Vending</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

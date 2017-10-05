@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using Moq;
+using NUnit.Framework;
 using Vending;
 
 namespace VendingTests
@@ -10,7 +12,6 @@ namespace VendingTests
         public void TestMethod1()
         {
             Assert.IsTrue(true);
-            new VendingMachine();
         }
     }
 }
