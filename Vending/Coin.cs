@@ -2,6 +2,7 @@ namespace Vending
 {
     public enum Coin
     {
-        Dime
+        Dime,
+        Penny
     }
 }

@@ -4,7 +4,7 @@ namespace Vending
     {
         public bool Validate(Coin coin)
         {
-            return true;
+            return coin != Coin.Penny;
         }
     }
 }

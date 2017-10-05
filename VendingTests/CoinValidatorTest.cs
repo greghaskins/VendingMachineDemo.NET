@@ -21,5 +21,15 @@ namespace VendingTests
 
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void ShouldRejectAPenny()
+        {
+            var validator = new CoinValidator();
+
+            var result = validator.Validate(Coin.Penny);
+
+            Assert.AreEqual(false, result);
+        }
     }
 }
