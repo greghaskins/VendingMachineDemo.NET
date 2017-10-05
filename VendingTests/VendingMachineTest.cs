@@ -11,7 +11,7 @@ namespace VendingTests
         [Test]
         public void DisplaysTheValueOfAnInsertedCoin()
         {
-            var machine = new VendingMachine();
+            var machine = new VendingMachine(new CoinAppraiser());
 
             machine.InsertCoin(Coin.Dime);
 
@@ -21,7 +21,7 @@ namespace VendingTests
         [Test]
         public void DisplaysTheValueOfTwoInsertedCoins()
         {
-            var machine = new VendingMachine();
+            var machine = new VendingMachine(new CoinAppraiser());
 
             machine.InsertCoin(Coin.Quarter);
             machine.InsertCoin(Coin.Quarter);
@@ -31,7 +31,7 @@ namespace VendingTests
         [Test]
         public void DisplaysValuesGreaterThanOneDollar()
         {
-            var machine = new VendingMachine();
+            var machine = new VendingMachine(new CoinAppraiser());
 
             machine.InsertCoin(Coin.Quarter);
             machine.InsertCoin(Coin.Quarter);
