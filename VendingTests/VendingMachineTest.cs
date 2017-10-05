@@ -9,10 +9,13 @@ namespace VendingTests
     public class VendingMachineTest
     {
         [Test]
-        [Ignore("TODO")]
-        public void TestMethod1()
+        public void DisplaysTheValueOfAnInsertedCoin()
         {
-            Assert.IsTrue(true);
+            var machine = new VendingMachine();
+
+            machine.InsertCoin(Coin.Dime);
+
+            Assert.AreEqual("$0.10", machine.DisplayText);
         }
     }
 }
