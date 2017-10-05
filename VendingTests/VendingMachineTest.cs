@@ -28,5 +28,18 @@ namespace VendingTests
 
             Assert.AreEqual("$0.50", machine.DisplayText);
         }
+        [Test]
+        public void DisplaysValuesGreaterThanOneDollar()
+        {
+            var machine = new VendingMachine();
+
+            machine.InsertCoin(Coin.Quarter);
+            machine.InsertCoin(Coin.Quarter);
+            machine.InsertCoin(Coin.Quarter);
+            machine.InsertCoin(Coin.Quarter);
+            machine.InsertCoin(Coin.Nickel);
+
+            Assert.AreEqual("$1.05", machine.DisplayText);
+        }
     }
 }

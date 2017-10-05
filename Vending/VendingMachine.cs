@@ -1,4 +1,6 @@
-﻿namespace Vending
+﻿using System;
+
+namespace Vending
 {
     public class VendingMachine
     {
@@ -9,7 +11,7 @@
         public void InsertCoin(Coin coin)
         {
             _totalValueInserted += new CoinAppraiser().Appraise(coin);
-            DisplayText = "$0." + _totalValueInserted;
+            DisplayText = $"{_totalValueInserted/100.0:C}";
         }
 
 
