@@ -12,18 +12,12 @@ namespace VendingTests
     class CoinAppraiserTest
     {
         [Test]
-        public void ANickelIsWorthFiveCents()
+        [TestCase(Coin.Dime, ExpectedResult = 10)]
+        [TestCase(Coin.Nickel, ExpectedResult = 5)]
+        public int CoinsHaveTheCorrectValue(Coin coin)
         {
-            Assert.AreEqual(5, new CoinAppraiser().Appraise(Coin.Nickel));
+            return new CoinAppraiser().Appraise(coin);
         }
-
-        [Test]
-        public void ADimeIsWorthTenCents()
-        {
-            Assert.AreEqual(10, new CoinAppraiser().Appraise(Coin.Dime));
-        }
-
-
 
     }
 }
