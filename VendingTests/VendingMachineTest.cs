@@ -9,6 +9,7 @@ namespace VendingTests
     public class VendingMachineTest
     {
         [Test]
+        [Ignore("TODO")]
         public void TestMethod1()
         {
             Assert.IsTrue(true);
