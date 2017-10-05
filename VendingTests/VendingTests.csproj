@@ -66,6 +66,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CoinAppraiserTest.cs" />
     <Compile Include="CoinValidatorTest.cs" />
     <Compile Include="VendingMachineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coin.cs" />
+    <Compile Include="CoinAppraiser.cs" />
     <Compile Include="CoinValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
