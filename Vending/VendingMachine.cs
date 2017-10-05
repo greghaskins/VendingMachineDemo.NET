@@ -2,12 +2,16 @@
 {
     public class VendingMachine
     {
-        public void InsertCoin(Coin coin)
-        {
-            var value = new CoinAppraiser().Appraise(coin);
-            DisplayText = "$0." + value;
-        }
+        private int _totalValueInserted = 0;
 
         public string DisplayText { get; private set; }
+
+        public void InsertCoin(Coin coin)
+        {
+            _totalValueInserted += new CoinAppraiser().Appraise(coin);
+            DisplayText = "$0." + _totalValueInserted;
+        }
+
+
     }
 }
