@@ -16,5 +16,14 @@ namespace VendingTests
         {
             Assert.AreEqual(5, new CoinAppraiser().Appraise(Coin.Nickel));
         }
+
+        [Test]
+        public void ADimeIsWorthTenCents()
+        {
+            Assert.AreEqual(10, new CoinAppraiser().Appraise(Coin.Dime));
+        }
+
+
+
     }
 }
