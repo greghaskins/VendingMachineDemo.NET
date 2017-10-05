@@ -14,6 +14,7 @@ namespace VendingTests
         [Test]
         [TestCase(Coin.Dime, ExpectedResult = 10)]
         [TestCase(Coin.Nickel, ExpectedResult = 5)]
+        [TestCase(Coin.Quarter, ExpectedResult = 25)]
         public int CoinsHaveTheCorrectValue(Coin coin)
         {
             return new CoinAppraiser().Appraise(coin);

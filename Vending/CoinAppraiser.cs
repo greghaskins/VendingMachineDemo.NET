@@ -12,6 +12,8 @@ namespace Vending
                     return 10;
                 case Coin.Nickel:
                     return 5;
+                case Coin.Quarter:
+                    return 25;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(coin), coin, null);
             }
