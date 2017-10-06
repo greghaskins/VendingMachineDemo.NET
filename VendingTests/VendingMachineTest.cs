@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Moq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Vending;
 
 namespace VendingTests
@@ -9,11 +7,12 @@ namespace VendingTests
     public class VendingMachineTest
     {
         private VendingMachine _vendingMachine;
-        private IDisplay _mockDisplay = null;
+        private IDisplay _mockDisplay;
 
         [SetUp]
         public void SetUp()
         {
+            _mockDisplay = null;
             _vendingMachine = new VendingMachine(new FaceValueCoinAppraiser(), _mockDisplay);
         }
 
@@ -37,7 +36,17 @@ namespace VendingTests
             _vendingMachine.InsertCoin(Coin.Nickel);
             _vendingMachine.InsertCoin(Coin.Quarter);
             _vendingMachine.InsertCoin(Coin.Dime);
+
             Assert.AreEqual(45, _vendingMachine.CurrentTotalDeposited);
+        }
+
+        [Test]
+        [Ignore("Remove this line when you're ready to run the test")]
+        public void CurrentTotalIsDisplayedWhenYouInsertCoins()
+        {
+            _vendingMachine.InsertCoin(Coin.Nickel);
+            _vendingMachine.InsertCoin(Coin.Dime);
+            Assert.AreEqual("15 cents", null /* TODO: use _mockDisplay here */);
         }
     }
 }
