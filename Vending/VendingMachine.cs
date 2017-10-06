@@ -2,7 +2,7 @@
 {
     public class VendingMachine
     {
-        private int _totalValueInserted = 0;
+        public int CurrentTotalDeposited { get; private set; } = 0;
         private readonly IAppraiser<Coin> _coinAppraiser;
 
         public VendingMachine(IAppraiser<Coin> coinAppraiser)
@@ -10,12 +10,9 @@
             _coinAppraiser = coinAppraiser;
         }
 
-        public string DisplayText { get; private set; }
-
         public void InsertCoin(Coin coin)
         {   
-            _totalValueInserted += _coinAppraiser.Appraise(coin);
-            DisplayText = $"{_totalValueInserted/100.0:C}";
+            CurrentTotalDeposited += _coinAppraiser.Appraise(coin);
         }
 
 

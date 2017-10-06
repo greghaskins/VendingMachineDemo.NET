@@ -8,38 +8,35 @@ namespace VendingTests
     [TestFixture]
     public class VendingMachineTest
     {
-        [Test]
-        public void DisplaysTheValueOfAnInsertedCoin()
+        private VendingMachine _vendingMachine;
+
+        [SetUp]
+        public void SetUp()
         {
-            var machine = new VendingMachine(new FaceValueCoinAppraiser());
-
-            machine.InsertCoin(Coin.Dime);
-
-            Assert.AreEqual("$0.10", machine.DisplayText);
+            _vendingMachine = new VendingMachine(new FaceValueCoinAppraiser());
         }
 
         [Test]
-        public void DisplaysTheValueOfTwoInsertedCoins()
+        public void StartsWithZeroCentsCredit()
         {
-            var machine = new VendingMachine(new FaceValueCoinAppraiser());
-
-            machine.InsertCoin(Coin.Quarter);
-            machine.InsertCoin(Coin.Quarter);
-
-            Assert.AreEqual("$0.50", machine.DisplayText);
+            Assert.AreEqual(0, _vendingMachine.CurrentTotalDeposited);
         }
+        
         [Test]
-        public void DisplaysValuesGreaterThanOneDollar()
+        public void CreditGoesUpByTenCentsWhenYouInsertADime()
         {
-            var machine = new VendingMachine(new FaceValueCoinAppraiser());
+            _vendingMachine.InsertCoin(Coin.Dime);
+            Assert.AreEqual(10, _vendingMachine.CurrentTotalDeposited);
+        }
 
-            machine.InsertCoin(Coin.Quarter);
-            machine.InsertCoin(Coin.Quarter);
-            machine.InsertCoin(Coin.Quarter);
-            machine.InsertCoin(Coin.Quarter);
-            machine.InsertCoin(Coin.Nickel);
-
-            Assert.AreEqual("$1.05", machine.DisplayText);
+        [Test]
+        public void CreditAccumulatesAsYouInsertMoreCoins()
+        {
+            _vendingMachine.InsertCoin(Coin.Nickel);
+            _vendingMachine.InsertCoin(Coin.Nickel);
+            _vendingMachine.InsertCoin(Coin.Quarter);
+            _vendingMachine.InsertCoin(Coin.Dime);
+            Assert.AreEqual(45, _vendingMachine.CurrentTotalDeposited);
         }
     }
 }
