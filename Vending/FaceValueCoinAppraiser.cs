@@ -2,7 +2,7 @@
 
 namespace Vending
 {
-    public class FaceValueCoinAppraiser: ICoinAppraiser
+    public class FaceValueCoinAppraiser: IAppraiser<Coin>
     {
         public int Appraise(Coin coin)
         {

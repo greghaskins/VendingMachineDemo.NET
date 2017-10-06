@@ -3,9 +3,9 @@
     public class VendingMachine
     {
         private int _totalValueInserted = 0;
-        private readonly ICoinAppraiser _coinAppraiser;
+        private readonly IAppraiser<Coin> _coinAppraiser;
 
-        public VendingMachine(ICoinAppraiser coinAppraiser)
+        public VendingMachine(IAppraiser<Coin> coinAppraiser)
         {
             _coinAppraiser = coinAppraiser;
         }
