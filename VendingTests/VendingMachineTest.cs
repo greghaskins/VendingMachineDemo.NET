@@ -9,11 +9,12 @@ namespace VendingTests
     public class VendingMachineTest
     {
         private VendingMachine _vendingMachine;
+        private IDisplay _mockDisplay = null;
 
         [SetUp]
         public void SetUp()
         {
-            _vendingMachine = new VendingMachine(new FaceValueCoinAppraiser());
+            _vendingMachine = new VendingMachine(new FaceValueCoinAppraiser(), _mockDisplay);
         }
 
         [Test]
